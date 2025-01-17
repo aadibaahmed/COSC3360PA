@@ -1,4 +1,7 @@
 #include <iostream>
+#include <string>
+#include <sstream>
+#include <algorithm>
 // #include <pthread.h>
 using namespace std;
 
@@ -13,7 +16,40 @@ using namespace std;
 
 */
 int main() {
+    string input = R"(26 7
+U 0 10,H 15 25 
+0 4 8 12 25 29 33
+0 10 15 25 0 10 15 25 0 10 15 25 0 10 15 16 17 18 19 20 21 22 23 24 25 0 10 15 25 1 9 15 25 2 3 4 5 6 7 8 15 25)";
+    
+
+    stringstream ss(input);
+    string line1;
+    getline(ss, line1);
+    int width, height;
+
+    stringstream line1_ss(line1);
+    line1_ss >> width >> height;
+    
+    string line2;
+    getline(ss, line2);
+    for(int i = 0; i < line2.length(); i++){
+        if(line2[i] == ','){
+            line2[i] = ' ';
+        }
+    }
+    cout << line2;
+    char character_1, character_2;
+    int character_1_min, character_1_max, character_2_min, character_2_max;
+
+    
 
 
+    
+
+    string line3;
+    getline(ss, line3);
+
+    string line4;
+    getline(ss, line4);
     return 0;
 }
