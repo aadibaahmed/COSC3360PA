@@ -23,7 +23,7 @@ U 0 10,H 15 25
 0 10 15 25 0 10 15 25 0 10 15 25 0 10 15 16 17 18 19 20 21 22 23 24 25 0 10 15 25 1 9 15 25 2 3 4 5 6 7 8 15 25)";
     
 
-    stringstream ss(input);
+    stringstream ss(input);                                                 // Get the height and the width from the first line
     string line1;
     getline(ss, line1);
     int width, height;
@@ -33,16 +33,32 @@ U 0 10,H 15 25
     
     vector<vector<char>> array(height, vector<char>(width, ' '));           // create an empty map to place the letters and characters
     
-    for (int i = 0; i < height; i++ ){
-        for(int j = 0; j < width; j++){
-           cout <<  array[i][j];
-        }
-        cout << endl;
-    }
+    // for (int i = 0; i < height; i++ ){
+    //     for(int j = 0; j < width; j++){
+    //       cout <<  array[i][j];
+    //     }
+    //     cout << endl;
+    // }
 
-    // string line2;
-    // getline(ss, line2);
-    // replace(line2.begin(), line2.end(), ',', ' ');
+    string line2;                                                          // Parse out the characters and its ranges from line 2
+    getline(ss, line2);
+    replace(line2.begin(), line2.end(), ',', ' ');
+
+    stringstream line2_ss(line2);
+    vector<char> Letters;
+    vector<int> Range;
+
+    char letter;
+    int min,max;
+    
+    while (line2_ss >> letter >> min >> max) {
+        Letters.push_back(letter);
+        Range.push_back(min);
+        Range.push_back(max);
+    }
+    for (int i = 0; i < Letters.size(); i++) {
+        cout << "Letter: " << Letters[i] << ", Range: " << Range[2 * i] << " to " << Range[2 * i + 1] << endl;
+    }
 
     // char character_1, character_2;
     // int character_1_min, character_1_max, character_2_min, character_2_max;
