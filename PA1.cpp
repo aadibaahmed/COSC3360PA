@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <string>
 #include <sstream>
 #include <algorithm>
@@ -30,26 +31,29 @@ U 0 10,H 15 25
     stringstream line1_ss(line1);
     line1_ss >> width >> height;
     
-    string line2;
-    getline(ss, line2);
-    for(int i = 0; i < line2.length(); i++){
-        if(line2[i] == ','){
-            line2[i] = ' ';
+    vector<vector<char>> array(height, vector<char>(width, ' '));           // create an empty map to place the letters and characters
+    
+    for (int i = 0; i < height; i++ ){
+        for(int j = 0; j < width; j++){
+           cout <<  array[i][j];
         }
+        cout << endl;
     }
-    cout << line2;
-    char character_1, character_2;
-    int character_1_min, character_1_max, character_2_min, character_2_max;
 
-    
+    // string line2;
+    // getline(ss, line2);
+    // replace(line2.begin(), line2.end(), ',', ' ');
+
+    // char character_1, character_2;
+    // int character_1_min, character_1_max, character_2_min, character_2_max;
 
 
-    
+    // string line3;
+    // getline(ss, line3);
 
-    string line3;
-    getline(ss, line3);
+    // cout << line3;
 
-    string line4;
-    getline(ss, line4);
-    return 0;
+    // string line4;
+    // getline(ss, line4);
+    // return 0;
 }
