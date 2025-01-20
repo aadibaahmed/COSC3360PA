@@ -1,0 +1,15 @@
+    // for (int i = 0; i < height; i++ ){                                   /check if the array has been filled properly
+    //     for(int j = 0; j < width; j++){
+    //       cout <<  array[i][j];
+    //     }
+    //     cout << endl;
+    // }
+
+    // for (int i = 0; i < Letters.size(); i++) {
+    //     cout << "Letter: " << Letters[i] << ", Range: " << Range[2 * i] << " to " << Range[2 * i + 1] << endl;
+    // }
+
+
+    // for(int i = 0; i < number_positions.size(); i++){
+    //     cout << number_positions[i] << endl;
+    // }
